@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import Game from './Game.js';
 import './App.css';
 
-function App() {
+function App(){
+  const WinningNumber = Math.floor(Math.random() * 100) + 1;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Number Guessing Game</h1>
+      <h3>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer.
+          We'll tell you if your guess was too high or too low.</h3>
+      <h1><Game WinningNumber={WinningNumber}/></h1>
     </div>
   );
 }
